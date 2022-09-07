@@ -32,7 +32,7 @@ public class Main {
                     System.out.println("That do you want buy?");
                     String inputBuy = scanner.nextLine();
                     list.add(inputBuy);
-                    int size = list.size();   //TODO why is 3 items in list default
+                    int size = list.size();
                     System.out.println("Total in shopping list: " + size);
                     separator();
                     break;
@@ -46,7 +46,7 @@ public class Main {
                     shopList(list);
                     System.out.println("That do you want remove? Input number or name...");
                     String rm = scanner.nextLine();
-                    deleteListItem(rm, list); //TODO Is not working! Why...?
+                    deleteListItem(rm, list);
                     shopList(list);
                     separator();
                     break;
@@ -74,11 +74,7 @@ public class Main {
         }
     }
 
-    static void separator() {
-        System.out.println();
-        System.out.println("********************");
-        System.out.println();
-    }
+    static void separator() { System.out.println("********************"); }
 
     static boolean tryParseInt(String rm) {
         try {
@@ -110,6 +106,8 @@ public class Main {
             String itemLower = list.get(i).toLowerCase();
             if (itemLower.contains(queryLower)) {
                 System.out.println((i + 1) + ". " + list.get(i));
+            } else {
+                System.out.println("No objects found!");
             }
         }
     }
